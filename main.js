@@ -1,5 +1,6 @@
 // Initialize all objects
-const weather = new Weather( "Kuje" );
+// const storage = new Storage();
+const weather = new Weather(localStorage.getItem("city"));
 const ui = new UI();
 
 const cityInput = document.getElementById("city-input");
@@ -10,6 +11,11 @@ form.addEventListener("submit", changeCity);
 
 // Default on load
 document.addEventListener("DOMContentLoaded", () => {
+  if (weather.city === null) {
+    localStorage.setItem("city", "Kuje");
+    weather.changeLocation(localStorage.getItem("city"));
+  }
+
   displayWeather();
 });
 
@@ -29,6 +35,7 @@ function changeCity(e) {
   document.getElementById("location").textContent = `Current Weather in ${
     cityInput.value
   }`;
+  localStorage.setItem( "city", cityInput.value );
   displayWeather();
   console.log(cityInput.value);
   cityInput.value = "";
