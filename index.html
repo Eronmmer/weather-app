@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="bootstrap.min.css" />
+  </head>
+
+  <body>
+    <h1 class="text-center mx-auto mt-3">Weather App</h1>
+    <hr />
+    <div class="container">
+      <!-- <div> -->
+        <div class="col-md-8 mx-auto text-center bg-primary mt-3 p-5 rounded">
+          <h2 class="mb-3" id="location"></h2>
+          <h4 class="text-dark" id="description"></h4>
+          <!-- <img alt="Weather Icon" id="w-icon"> -->
+          <ul id="w-details" class="list-group mt-3" style="font-size: 17px">
+            <li class="list-group-item" id="temperature"></li>
+            <li class="list-group-item" id="humidity"></li>
+            <li class="list-group-item" id="pressure"></li>
+            <li class="list-group-item" id="wind-speed"></li>
+          </ul>
+        </div>
+      <!-- </div> -->
+    <!-- </div> -->
+      <!-- <button class="btn btn-success test-btn mx-auto btn-block mt-3 mb-5 col-md-3">Show weather results</button> -->
+      <button class="btn btn-danger mx-auto btn-block col-md-2 mt-3 mb-5" data-toggle="modal" data-target="#change-city-modal">Change City</button>
+      <!-- Modal -->
+      <div class="modal" id="change-city-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title mx-auto">Change city</h3>
+              <button class="close" type="button" data-dismiss="modal">
+                <span>&times;</span>
+              </button>
+            </div>
+            <h5 class="mx-auto text-center mt-3">Please input a valid city e.g Kuje, Gwagwalada, Ikorodu</h5>
+            <form id="city-form">
+              <div class="form-group row p-3">
+                <label for="city-input" class="col-sm-3 col-form-label">Input city</label>
+                <div class="col-sm-9">
+                  <input type="text" id="city-input" class="form-control" placeholder="input a city e.g Maitama">  
+                </div>
+              </div>
+              <input class="btn btn-primary mx-auto btn-block col-sm-3 mb-3" type="submit" value="Submit">
+            </form>
+            <div class="modal-footer">
+              <button class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="storage.js"></script>
+    <script src="weather.js"></script>
+    <script src="ui.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
